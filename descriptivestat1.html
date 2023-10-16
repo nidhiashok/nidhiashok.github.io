@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Descriptive Statistics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo1.png" alt="" /></span><span class="title">Pragnya</span>
+								</a>
+
+						</div>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Descriptive Statistics : Tables and Graphs</h1>
+
+                            <p>The best way to make friends with the data is to get creative and colourful. But how do we get creative and colourful with data? By means of descriptive statistics. But what is descriptive statistics?</p>
+
+                            <p>Descriptive statistics is the practice of understanding and presenting numerical findings clearly and concisely. To easily show the essential characteristics of the data to the observer. </p>
+
+                            <h2>Frequency Tables and Graphs</h2>
+
+                            <p>The simplest way to understand data is to tabulate it. The following is a sample of prices, rounded to the nearest cent, charged per gallon of standard unleaded gasoline in the San Francisco Bay Area in June 1997.</p>
+
+                            <p>3.88, 3.90, 3.93, 3.90, 3.93, 3.96, 3.88, 3.94, 3.96, 3.88, 3.94, 3.99, 3.98</p>
+
+                            <p>Now, Let’s try tabulating this to see how it will help us understand us the data better. Using R programming to work with the data.</p>
+
+                            <pre>
+                            <code>
+                            #saving the prices in an array
+                            pricepergallon <- c(3.88,3.90, 3.93, 3.90, 3.93, 3.96, 3.88, 3.94, 3.96, 3.88, 3.94, 3.99, 3.98)
+
+                            #converting the array into a table and calulating the frequencies
+                            x <- table(pricepergallon)
+
+                            #Converting table into dataframe for better presentation
+                            gasoline <- as.data.frame(x)
+                            </code>
+                            </pre>
+
+
+                            <p>Using this we can tabulate the data to produce the table as below.</p>
+
+                            <span class="image main"><img src="images/frequencytable.png" width="5" !important height="500" !important/></span>
+
+                            <p>It gets easier to comprehend the data when tabulated. When the size of the data is small its very easy to understand it and make inferences from the table. Or we can use a graph to the same effect. Let us try it with a Line Graph.</p>
+
+                            <span class="image main"><img src="images/line plot gas price.png" width="5" height="500" !important /></span>
+
+                            <p>Now that we have given Line graph a try let us see if bar graph will help us show this better. </p>
+
+                            <span class="image main"><img src="images/barplot gasoline prices.png" width="1" height="500" !important/></span>
+
+                            <p> The last one we will try now is a frequency polygon. </p>
+
+                            <span class="image main"><img src="images/frequency poly gas price.png" width="1" height="500" /></span>
+
+                            <p> As we can see in the above graph we can communicate a lot of information visually. At one glance the viewer can infer information like the most common gas price, the highest and lowest price for the month of June, the range of the prices for June etc. But we can see that these information can be easily obtained when the data is presented in a tabular form or as a graph. </p>
+
+
+                            <h2>Relative Frequency Tables and Graphs</h2>
+
+                            <p>The relative frequency of a data value is the proportion of the data that have that value.</p>
+
+                            <p>If a dataset has a total of n values, say f is the frequency of a particular value, then the ratio f/n is its relative frequency. </p>
+
+                            <p>The relative frequencies can also be represented by using Tables and Graphs. </p>
+
+                            <p>Lets try to calculate the relative frequency of the above example and tabulate it. </p>
+
+                            
+                            <pre>
+                            <code>
+                                
+                            #Calculating the realtive frequencies and adding the column with relative frequency values
+                            n <- as.numeric(sum(gasoline$Freq)) 
+                            gasoline$RelFreq <- gasoline$Freq/n
+
+
+                            </code>
+                            </pre>
+                            
+                            <p>Results into a table like this.</p>
+
+                            <span class="image main"><img src="images/relativefreqtab.png" width="1" height="500" !important /></span>   
+
+                            <p>We can plot a bar plot to check how the relative frequency graph turns out. </p>
+
+                            <span class="image main"><img src="images/rbarplotgasprice.png" width="1" height="500" /></span>
+
+                            <p>The relative frequencies can be depicted using Pie charts. Let us see this using another example. </p>
+
+                            <p>This table depicts the data for 200 patients admitted recently to a cancer speciality clinic.</p>
+                            
+                            <span class="image main"><img src="images/Cancertable.png" width="1" height="500" /></span>
+                            
+                            <br>
+
+                            <span class="image main"><img src="images/piechart.png" width="1" height="600" /></span>
+
+                            <p>Pie charts are a very bad way of displaying information. The eye is good at judging linear measures and bad at judging relative areas. A bar chart or dot chart is a preferable way of displaying this type of data. </p>
+
+
+
+                            <h3>But why and what do these frequencies help us understand about the dataset?</h3>
+
+                            <p>I had the same question, so I did what I like to do these days. Ask ChatGPT. I simply used the naive prompting method to get a satisfactory answer. If you aren’t satisfied with that output you can try prompting in different ways till you are satisfied. Sharing my answers here. </p>
+
+                            <p>The absolute frequency of a dataset refers to the number of times a particular value or category appears in the dataset. It provides basic information about the distribution of data and can be used to draw several inferences and insights. Here are some inferences that can be drawn from the absolute frequency of a dataset:</p>
+
+                            <p><ul><li> Data Distribution: Absolute frequencies help you understand the distribution of data by showing how many times each value or category occurs. This can reveal patterns, clusters, or outliers in your data.</li>
+
+                                    <li> Mode Identification: The value or category with the highest absolute frequency is the mode of the dataset. It represents the most common or frequently occurring data point.</li>
+
+                                    <li> Central Tendency: Absolute frequencies can provide insights into the central tendency of the dataset. For example, in a dataset of test scores, a higher absolute frequency around a certain score may indicate a central tendency.</li>
+
+                                    <li> Outlier Detection: Values with low absolute frequencies may indicate outliers or rare occurrences in the dataset. Identifying such outliers can be important in various data analysis tasks.</li>
+
+                                    <li> Categorical Analysis: In categorical data, absolute frequencies help you understand the prevalence of different categories. This is useful for market research, survey analysis, and other fields where categories play a significant role.</li>
+
+                                    <li> Decision-Making: In business and other practical applications, absolute frequencies can inform decision-making. For example, they can help identify the most popular products, customer preferences, or areas with high demand.</li>
+                                </ul>
+                            </p>
+
+                            <p>It's important to note that while absolute frequencies provide valuable insights, they should be considered in conjunction with other statistical measures and visualisation techniques to gain a comprehensive understanding of your dataset. Additionally, context and domain knowledge are crucial for interpreting the implications of absolute frequencies accurately.</p>
+
+                            <p>You can try this to find out what relative frequency does for us. I hope you have a basic idea of where to start with your data and what tables and graphs can do for us. We will explore this further. Till then happy learning!</p>
+
+
+							
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<!--<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>-->
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/nidhi-ashok-574834b5/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
